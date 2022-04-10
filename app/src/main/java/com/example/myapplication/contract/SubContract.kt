@@ -6,6 +6,7 @@ interface SubContract {
 
     interface View : BaseView<Presenter>{
         fun setData(data : String)
+        fun setRecycler()
     }
     interface Presenter : BasePresenter{
         fun getData()
