@@ -1,6 +1,7 @@
 package com.example.myapplication.screen.sub
 
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -14,6 +15,8 @@ import com.example.myapplication.contract.SubContract
 import com.example.myapplication.databinding.ActivitySubBinding
 import com.example.myapplication.databinding.ItemTestBinding
 import io.reactivex.Observable
+import java.lang.Thread.sleep
+import kotlin.concurrent.thread
 
 class SubActivity : BaseActivity<ActivitySubBinding>(), SubContract.View {
 
@@ -52,7 +55,6 @@ class SubActivity : BaseActivity<ActivitySubBinding>(), SubContract.View {
     }
 
     override fun setRecycler(){
-        Log.d("Testapp", "${dataList.size}")
         val adapter = SubAdapter()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
